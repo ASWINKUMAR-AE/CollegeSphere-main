@@ -1,0 +1,61 @@
+
+.admission-form-container {
+    width: 400px;
+    height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: url('../../assets/index2.jpg');
+    border-radius: 20px;
+    box-shadow:red;
+    text-align: center;
+  }
+  
+  .admission-form-container h2 {
+    margin-bottom: 20px;
+    color:whitesmoke;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color:white;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    
+  }
+  
+  .form-group textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  button {
+    width: 200px;
+    padding: 10px;
+
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  

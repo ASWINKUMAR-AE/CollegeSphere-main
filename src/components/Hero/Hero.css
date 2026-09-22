@@ -1,0 +1,150 @@
+.hero-container {
+  height: 100vh;
+  background: url('https://dept.tngptcmadurai.com/img/banner-03.jpg') no-repeat center center/cover;
+  display: flex;
+  width: 100%; /* Changed from 300vh to 100% */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,255,0.2) 0%, rgba(138,43,226,0.2) 100%);
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+.hero-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 30px rgba(0,0,255,0.3);
+  transform-style: preserve-3d;
+  transform: perspective(500px) translateZ(20px);
+  transition: all 0.5s ease;
+}
+
+.hero-content:hover {
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 0 50px rgba(100,149,237,0.5);
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,191,255,0.7), 
+               0 0 20px rgba(30,144,255,0.5),
+               3px 3px 0 rgba(0,0,0,0.2);
+  background: linear-gradient(to right, #00ffff, #9370db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  padding: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.hero-content p::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #00ffff, transparent);
+}
+
+.hero-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  background: linear-gradient(45deg, #00ffff, #9370db);
+  color: #000;
+  box-shadow: 0 5px 15px rgba(0,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,255,255,0.6);
+}
+
+.hero-button:hover::before {
+  left: 100%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating particles effect */
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
